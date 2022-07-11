@@ -62,7 +62,7 @@ aside {
     height: calc(100vh - 100px - 120px);
     img {
       width: 40px;
-      :hover {
+      &:hover {
         cursor: pointer;
       }
     }
@@ -90,7 +90,7 @@ nav {
     li {
       white-space: nowrap;
       @include font('Inter', normal, 500, 16px, 29px, black);
-      :hover {
+      &:hover {
         cursor: pointer;
       }
     }
@@ -103,7 +103,7 @@ nav {
     gap: 45px;
     img {
       width: 35px;
-      :hover {
+      &:hover {
         cursor: pointer;
       }
     }
@@ -142,7 +142,7 @@ main {
           border-radius: 50px;
           background-color: white;
           white-space: nowrap;
-          :hover {
+          &:hover {
             cursor: pointer;
           }
         }
@@ -163,7 +163,7 @@ main {
           @include font('Inter', normal, 400, 16px, 19px, #6A6A6A);
           text-decoration-line: underline;
           padding-right: 30px;
-          :hover {
+          &:hover {
             cursor: pointer;
           }
         }
@@ -219,7 +219,7 @@ main {
         width: 100px;
         height: 100px;
       }
-      :hover {
+      &:hover {
         cursor: pointer;  
       }
     }

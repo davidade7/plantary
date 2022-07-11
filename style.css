@@ -71,7 +71,7 @@ aside .social-network img {
   width: 40px;
 }
 
-aside .social-network img :hover {
+aside .social-network img:hover {
   cursor: pointer;
 }
 
@@ -127,7 +127,7 @@ nav ul li {
   color: black;
 }
 
-nav ul li :hover {
+nav ul li:hover {
   cursor: pointer;
 }
 
@@ -152,7 +152,7 @@ nav .options img {
   width: 35px;
 }
 
-nav .options img :hover {
+nav .options img:hover {
   cursor: pointer;
 }
 
@@ -220,7 +220,7 @@ main .left-section .intro footer button {
   white-space: nowrap;
 }
 
-main .left-section .intro footer button :hover {
+main .left-section .intro footer button:hover {
   cursor: pointer;
 }
 
@@ -263,7 +263,7 @@ main .left-section .summary .summary-header .expend {
   padding-right: 30px;
 }
 
-main .left-section .summary .summary-header .expend :hover {
+main .left-section .summary .summary-header .expend:hover {
   cursor: pointer;
 }
 
@@ -366,7 +366,7 @@ main .right-section .circle img {
   height: 100px;
 }
 
-main .right-section .circle :hover {
+main .right-section .circle:hover {
   cursor: pointer;
 }
 
