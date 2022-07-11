@@ -1,0 +1,411 @@
+@font-face {
+  font-family: "Inika";
+  src: url("./assets/fonts/Inika-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter-variable-font.ttf") format("truetype");
+  font-weight: 100 900;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+/* BODY */
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* ASIDE */
+aside {
+  width: 110px;
+  height: 100vh;
+}
+
+aside .logo {
+  background-color: #58C835;
+  height: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+aside .social-network {
+  background-color: #282E3A;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 35px;
+  padding-bottom: 100px;
+  height: calc(100vh - 100px - 120px);
+}
+
+aside .social-network img {
+  width: 40px;
+}
+
+aside .social-network img :hover {
+  cursor: pointer;
+}
+
+/* NAVBAR */
+nav {
+  position: absolute;
+  left: 110px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: calc(100% - 110px - 100px);
+  padding: 36px 50px;
+  z-index: 1;
+}
+
+nav .title h1 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 48px;
+  color: #58C835;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  gap: 50px;
+  padding: 0 50px;
+}
+
+nav ul li {
+  white-space: nowrap;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 29px;
+  color: black;
+}
+
+nav ul li :hover {
+  cursor: pointer;
+}
+
+nav ul .active {
+  border-bottom: 2px solid #58C835;
+}
+
+nav .options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  gap: 45px;
+}
+
+nav .options img {
+  width: 35px;
+}
+
+nav .options img :hover {
+  cursor: pointer;
+}
+
+/* MAIN */
+main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  width: calc(100vw - 110px);
+}
+
+main .left-section {
+  padding: 220px 0 0 50px;
+  position: relative;
+}
+
+main .left-section .intro {
+  margin-bottom: 60px;
+}
+
+main .left-section .intro header {
+  margin-bottom: 40px;
+}
+
+main .left-section .intro header h2 {
+  font-family: "Inika";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 63px;
+  color: black;
+  white-space: nowrap;
+}
+
+main .left-section .intro .content {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: black;
+  margin-bottom: 50px;
+  max-width: 420px;
+}
+
+main .left-section .intro footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 50px;
+}
+
+main .left-section .intro footer button {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: black;
+  padding: 11px 15px;
+  border: 2px solid #58C835;
+  border-radius: 50px;
+  background-color: white;
+  white-space: nowrap;
+}
+
+main .left-section .intro footer button :hover {
+  cursor: pointer;
+}
+
+main .left-section .intro footer .active {
+  background-color: #58C835;
+  color: white;
+}
+
+main .left-section .summary .summary-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 30px;
+}
+
+main .left-section .summary .summary-header .subtitle {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: black;
+}
+
+main .left-section .summary .summary-header .expend {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #6A6A6A;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  padding-right: 30px;
+}
+
+main .left-section .summary .summary-header .expend :hover {
+  cursor: pointer;
+}
+
+main .left-section .summary .articles {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 21px;
+  padding-right: 20px;
+}
+
+main .left-section .summary .articles article header {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+main .left-section .summary .articles article div {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: black;
+}
+
+main .left-section .page-locator {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+main .left-section .page-locator .current-page {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 58px;
+  color: #58C835;
+}
+
+main .left-section .page-locator .separator {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 48px;
+  color: #58C835;
+  padding: 0 5px 0 20px;
+}
+
+main .left-section .page-locator .total-page {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: #58C835;
+}
+
+main .right-section {
+  background-image: radial-gradient(50% 22.02% at 50% 50%, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.048) 100%), url("./assets/images/photo-2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .right-section .circle {
+  width: 135px;
+  height: 135px;
+  border: 3px solid white;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .right-section .circle img {
+  width: 100px;
+  height: 100px;
+}
+
+main .right-section .circle :hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+  nav ul {
+    gap: 35px;
+  }
+  nav .options {
+    gap: 35px;
+  }
+  main .left-section .summary .articles {
+    gap: 15px;
+    padding-right: 15px;
+  }
+  main .left-section .summary .articles article header {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: black;
+    margin-bottom: 8px;
+  }
+  main .left-section .summary .articles article div {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: black;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  nav ul {
+    gap: 20px;
+  }
+  nav .options {
+    gap: 20px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

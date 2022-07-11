@@ -1,0 +1,269 @@
+@font-face {
+  font-family: "Inika"; 
+  src: url('./assets/fonts/Inika-Regular.ttf')
+}
+
+@font-face {
+  font-family: "Inter"; 
+  src: url('./assets/fonts/Inter-variable-font.ttf') format('truetype');
+  font-weight: 100 900
+}
+
+$main-color: #58C835;
+$secondary-color: #282E3A;
+$background-color: #D1FFC6;
+
+@mixin font($fontfamily, $fontstyle, $fontweight, $fontsize, $lineheight, $color) {
+  font-family: $fontfamily;
+  font-style: $fontstyle;
+  font-weight: $fontweight;
+  font-size: $fontsize;
+  line-height: $lineheight;
+  color: $color;
+}
+@mixin positionning($display, $justify, $align) {
+  display: $display;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+/* BODY */
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+}
+
+/* ASIDE */
+aside {
+  width: 110px;
+  height: 100vh;
+  .logo {
+    background-color: $main-color;
+    height: 120px;
+    @include positionning(flex, center, center);
+  }
+  .social-network {
+    background-color: $secondary-color;
+    @include positionning(flex, end, center);
+    flex-direction: column;
+    gap: 35px;
+    padding-bottom: 100px;
+    height: calc(100vh - 100px - 120px);
+    img {
+      width: 40px;
+      :hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+/* NAVBAR */
+nav {
+  position: absolute;
+  left: 110px;
+  @include positionning(flex, space-between, center);
+  width: calc(100% - 110px - 100px);
+  padding: 36px 50px;
+  z-index: 1;
+  .title {
+    h1 {
+      @include font('Inter', normal, 500, 40px, 48px, $main-color);
+    }  
+  } 
+  ul {
+    @include positionning(flex, start, center);
+    list-style: none;
+    gap: 50px;
+    padding: 0 50px;
+    li {
+      white-space: nowrap;
+      @include font('Inter', normal, 500, 16px, 29px, black);
+      :hover {
+        cursor: pointer;
+      }
+    }
+    .active {
+      border-bottom: 2px solid $main-color;
+    }
+  }
+  .options {
+    @include positionning(flex, start, start);
+    gap: 45px;
+    img {
+      width: 35px;
+      :hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+/* MAIN */
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: calc(100vw - 110px);
+  .left-section {
+    padding: 220px 0 0 50px;
+    position: relative;
+    .intro {
+      margin-bottom: 60px;
+      header {
+        margin-bottom: 40px;
+        h2 {
+          @include font('Inika', normal, 400, 48px, 63px, black);
+          white-space: nowrap;
+        }
+      }
+      .content {
+        @include font('Inter', normal, 400, 16px, 19px, black);
+        margin-bottom: 50px;
+        max-width: 420px;
+      }
+      footer {
+        display: flex;
+        gap: 50px;
+        button {
+          @include font('Inter', normal, 500, 20px, 24px, black);
+          padding: 11px 15px;
+          border: 2px solid $main-color;
+          border-radius: 50px;
+          background-color: white;
+          white-space: nowrap;
+          :hover {
+            cursor: pointer;
+          }
+        }
+        .active {
+          background-color: $main-color;
+          color: white;
+        }
+      }
+    }
+    .summary {
+      .summary-header {
+        @include positionning(flex, space-between, center);
+        padding-bottom: 30px;
+        .subtitle {
+          @include font('Inter', normal, 500, 24px, 29px, black);
+        }
+        .expend {
+          @include font('Inter', normal, 400, 16px, 19px, #6A6A6A);
+          text-decoration-line: underline;
+          padding-right: 30px;
+          :hover {
+            cursor: pointer;
+          }
+        }
+      }
+      .articles {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 21px;
+        padding-right: 20px;
+        article {
+          header {
+            @include font('Inter', normal, 500, 20px, 24px, black);
+            margin-bottom: 10px;
+          }
+          div {
+            @include font('Inter', normal, 400, 16px, 19px, black);
+          }
+        }
+      }
+    }
+    .page-locator {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      .current-page {
+        @include font('Inter', normal, 500, 48px, 58px, $main-color);
+      }
+      .separator {
+        @include font('Inter', normal, 500, 40px, 48px, $main-color);
+        padding: 0 5px 0 20px;
+      }
+      .total-page {
+        @include font('Inter', normal, 500, 24px, 29px, $main-color);
+      }
+    }
+  }
+  .right-section {
+    background-image: 
+      radial-gradient(50% 22.02% at 50% 50%, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.048) 100%),
+      url("./assets/images/photo-2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom ;
+
+    @include positionning(flex, center, center);
+    .circle {
+      width: 135px;
+      height: 135px;
+      border: 3px solid white;
+      border-radius: 50%;
+      @include positionning(flex, center, center);
+      img {
+        width: 100px;
+        height: 100px;
+      }
+      :hover {
+        cursor: pointer;  
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1200px) {
+  nav {
+    ul {
+      gap: 35px;
+    }
+    .options {
+      gap: 35px;
+    }
+  }
+  main {
+    .left-section {
+      .summary {
+        .articles {
+          gap: 15px;
+          padding-right: 15px;
+          article { 
+            header {
+              @include font('Inter', normal, 500, 16px, 24px, black);
+              margin-bottom: 8px;
+            }
+            div {
+              @include font('Inter', normal, 400, 14px, 19px, black);
+            }
+          }
+        }
+      } 
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  nav {
+    ul {
+      gap: 20px;
+    }
+    .options {
+      gap: 20px;
+    }
+  }
+}
