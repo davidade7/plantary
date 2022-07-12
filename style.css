@@ -27,6 +27,10 @@ body {
   display: flex;
 }
 
+body .mobile {
+  display: none;
+}
+
 /* ASIDE */
 aside {
   width: 110px;
@@ -197,6 +201,7 @@ main .left-section .intro .content {
   color: black;
   margin-bottom: 50px;
   max-width: 420px;
+  padding-right: 10px;
 }
 
 main .left-section .intro footer {
@@ -377,6 +382,9 @@ main .right-section .circle:hover {
   nav .options {
     gap: 35px;
   }
+  main .left-section {
+    padding: 195px 0 0 50px;
+  }
   main .left-section .summary .articles {
     gap: 15px;
     padding-right: 15px;
@@ -406,6 +414,114 @@ main .right-section .circle:hover {
   }
   nav .options {
     gap: 20px;
+  }
+  main .left-section .intro {
+    margin-bottom: 40px;
+  }
+  main .left-section .intro header {
+    margin-bottom: 30px;
+  }
+  main .left-section .intro header h2 {
+    font-family: "Inika";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 54px;
+    color: black;
+    white-space: nowrap;
+  }
+  main .left-section .intro .content {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: black;
+    margin-bottom: 40px;
+    max-width: 420px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  aside, nav, main {
+    display: none;
+  }
+  body .mobile {
+    display: block;
+    width: 100vw;
+  }
+  body .mobile header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-bottom: 1px solid #282E3A;
+  }
+  body .mobile header .logo {
+    background-color: #58C835;
+  }
+  body .mobile header .title {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 48px;
+    color: #58C835;
+  }
+  body .mobile header .menu-icon {
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    margin-right: 10px;
+  }
+  body .mobile header .menu-icon:hover {
+    cursor: pointer;
+  }
+  body .mobile header .menu-icon div {
+    display: block;
+    position: absolute;
+    background-color: black;
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
+    opacity: 1;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+  }
+  body .mobile header .menu-icon div:nth-child(1) {
+    top: 6px;
+    -webkit-transform-origin: left center;
+            transform-origin: left center;
+  }
+  body .mobile header .menu-icon div:nth-child(2) {
+    top: 18px;
+    -webkit-transform-origin: left center;
+            transform-origin: left center;
+  }
+  body .mobile header .menu-icon div:nth-child(3) {
+    top: 30px;
+    -webkit-transform-origin: left center;
+            transform-origin: left center;
+  }
+  body .mobile .content {
+    padding: 0 10px;
+  }
+  body .mobile .content h2 {
+    font-family: "Inika";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    color: black;
+    white-space: nowrap;
   }
 }
 /*# sourceMappingURL=style.css.map */

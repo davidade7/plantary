@@ -42,6 +42,9 @@ body {
   height: 100vh;
   background-color: white;
   display: flex;
+  .mobile {
+    display: none;
+  }
 }
 
 /* ASIDE */
@@ -131,6 +134,7 @@ main {
         @include font('Inter', normal, 400, 16px, 19px, black);
         margin-bottom: 50px;
         max-width: 420px;
+        padding-right: 10px;
       }
       footer {
         display: flex;
@@ -238,6 +242,7 @@ main {
   }
   main {
     .left-section {
+      padding: 195px 0 0 50px;
       .summary {
         .articles {
           gap: 15px;
@@ -264,6 +269,87 @@ main {
     }
     .options {
       gap: 20px;
+    }
+  }
+  main {
+    .left-section {
+      .intro {
+        margin-bottom: 40px;
+        header {
+          margin-bottom: 30px;
+          h2 {
+            @include font('Inika', normal, 400, 40px, 54px, black);
+            white-space: nowrap;
+          }
+        }
+        .content {
+          @include font('Inter', normal, 400, 16px, 19px, black);
+          margin-bottom: 40px;
+          max-width: 420px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  aside, nav, main {
+    display: none;
+  }
+  body {
+    .mobile {
+      display: block;
+      width: 100vw;
+      header {
+        @include positionning(flex, space-between, center);
+        border-bottom: 1px solid $secondary-color;
+        .logo {
+          background-color: $main-color;
+        }
+        .title {
+          @include font('Inter', normal, 500, 40px, 48px, $main-color);
+        }
+        .menu-icon {
+          z-index: 1;
+          width: 40px;
+          height: 40px;
+          position: relative;
+          margin-right: 10px;
+          &:hover {
+            cursor: pointer;
+          }
+          div {
+            display: block;
+            position: absolute;
+            background-color: black;
+            height: 4px;
+            width: 100%;
+            border-radius: 2px;
+            opacity: 1;
+            transform: rotate(0deg);
+            transition: .5s ease-in-out;
+          }
+          div:nth-child(1) {
+            top: 6px;
+            transform-origin: left center;
+          }
+          div:nth-child(2) {
+            top: 18px;
+            transform-origin: left center;
+          }
+          div:nth-child(3) {
+            top: 30px;
+            transform-origin: left center;
+          }
+        }
+      }
+      .content {
+        padding: 0 10px;
+        h2 {
+          @include font('Inika', normal, 400, 40px, 48px, black);
+          white-space: nowrap;
+        }
+      }
     }
   }
 }
