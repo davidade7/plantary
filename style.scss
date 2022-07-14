@@ -300,54 +300,192 @@ main {
     .mobile {
       display: block;
       width: 100vw;
+      overflow-x: hidden;
       header {
-        @include positionning(flex, space-between, center);
-        border-bottom: 1px solid $secondary-color;
+        @include positionning(flex, start, center);
+        // border-bottom: 1px solid $secondary-color;
+        position: relative;
+        height: 65px;
         .logo {
           background-color: $main-color;
         }
         .title {
           @include font('Inter', normal, 500, 40px, 48px, $main-color);
+          margin-left: 30px;
         }
-        .menu-icon {
+        #menu-toggle {
+          position: absolute;
+          top: 20px;
+          right: 20px;
           z-index: 1;
-          width: 40px;
-          height: 40px;
-          position: relative;
-          margin-right: 10px;
-          &:hover {
+          user-select: none;
+          input {
+            width: 33px;
+            height: 33px;
             cursor: pointer;
+            opacity: 0;
+            z-index: 2;
+            margin: 0;
+            &:checked {
+              ~ {
+                span{
+                opacity: 1;
+                transform: rotate(45deg) translate(3px, -1px);
+                background: $secondary-color;
+                &:nth-last-child(3) {
+                    opacity: 0;
+                    transform: rotate(0deg) scale(0.2, 0.2);
+                  }
+                &:nth-last-child(2) {
+                  transform: rotate(-45deg) translate(0, 5px);
+                  }
+                }
+                ul {
+                  transform: none;
+                }
+              }
+            }
           }
-          div {
-            display: block;
+          span {
+            display: flex;
+            width: 29px;
+            height: 2px;
+            margin: 0 2px 5px 2px;
+            position: relative;
+            top: -29px;
+            background-color: $secondary-color;
+            border-radius: 3px;
+            z-index: 1;
+            transform-origin: 5px 0px;
+            transition: 
+              transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background-color 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+            &:first-child {
+              transform-origin: 0% 0%;
+            }
+            &:nth-last-child(2) {
+              transform-origin: 0% 100%;
+            }
+          }
+          ul { 
             position: absolute;
-            background-color: black;
-            height: 4px;
-            width: 100%;
-            border-radius: 2px;
-            opacity: 1;
-            transform: rotate(0deg);
-            transition: .5s ease-in-out;
-          }
-          div:nth-child(1) {
-            top: 6px;
-            transform-origin: left center;
-          }
-          div:nth-child(2) {
-            top: 18px;
-            transform-origin: left center;
-          }
-          div:nth-child(3) {
-            top: 30px;
-            transform-origin: left center;
+            top: 45px;
+            left: -180px;
+            width: 150px;
+            box-shadow: 0 0 10px #85888C;
+            padding: 25px 50px;
+            background-color: white;
+            -webkit-font-smoothing: antialiased;
+            transform-origin: 0% 0%;
+            transform: translate(100%, 0);
+            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+            list-style-type: none;
+            li {
+              white-space: nowrap;
+              padding: 5px 10px;
+              margin: 8px;
+              transition-delay: 2s;
+              @include font('Inter', normal, 500, 20px, 24px, black);
+              &:hover {
+                opacity:0.6;
+              }
+            }
+            .active {
+              border-left: 4px solid $main-color
+            }
           }
         }
       }
       .content {
-        padding: 0 10px;
-        h2 {
-          @include font('Inika', normal, 400, 40px, 48px, black);
-          white-space: nowrap;
+        padding: 10px;
+        .titles {
+          padding-bottom: 15px;
+          h2 {
+            @include font('Inika', normal, 400, 36px, 40px, black);
+          }
+        }
+        .description {
+          @include font('Inter', normal, 400, 16px, 20px, black);
+          max-width: 420px;
+          padding-bottom: 15px;
+        }
+        .buttons {
+          @include positionning(flex, space-around, center);
+          padding-bottom: 25px;
+          button {
+            @include font('Inter', normal, 500, 20px, 24px, black);
+            padding: 10px;
+            border: 2px solid $main-color;
+            border-radius: 50px;
+            background-color: white;
+            white-space: nowrap;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+          .active {
+            background-color: $main-color;
+            color: white;
+          }
+        }
+        .articles {
+          .header {
+            padding-bottom: 10px;
+            @include positionning(flex, space-between, center);
+            .subtitle {
+              @include font('Inter', normal, 500, 24px, 29px, black);
+            }
+            .expend {
+              @include font('Inter', normal, 400, 16px, 19px, #6A6A6A);
+              text-decoration-line: underline;
+              &:hover {
+                cursor: pointer;
+              }
+            }
+          }
+          article {
+            padding-bottom: 10px;
+            h3 {
+              @include font('Inter', normal, 500, 20px, 24px, black);
+            }
+            div {
+              @include font('Inter', normal, 400, 16px, 19px, black);
+            }
+          }
+        }
+      }
+      .video {
+        @include positionning(flex, center, center);
+        height: 100vw;
+        background-image: 
+          radial-gradient(50% 22.02% at 50% 50%, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.048) 100%),
+          url("./assets/images/photo-2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom ;
+        .circle {
+          width: 135px;
+          height: 135px;
+          border: 3px solid white;
+          border-radius: 50%;
+          @include positionning(flex, center, center);
+          img {
+            width: 100px;
+            height: 100px;
+          }
+          &:hover {
+            cursor: pointer;  
+          }
+        }
+      }
+      footer {
+        background-color: $secondary-color;
+        padding: 10px 0;
+        @include positionning(flex, center, center);
+        gap: 15px;
+        &:hover {
+          cursor: pointer;  
         }
       }
     }
