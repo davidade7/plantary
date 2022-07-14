@@ -303,7 +303,6 @@ main {
       overflow-x: hidden;
       header {
         @include positionning(flex, start, center);
-        // border-bottom: 1px solid $secondary-color;
         position: relative;
         height: 65px;
         .logo {
@@ -311,7 +310,8 @@ main {
         }
         .title {
           @include font('Inter', normal, 500, 40px, 48px, $main-color);
-          margin-left: 30px;
+          margin: auto;
+          padding-right: 53px;
         }
         #menu-toggle {
           position: absolute;
@@ -342,6 +342,12 @@ main {
                 }
                 ul {
                   transform: none;
+                  li {
+                    user-select: all;
+                    &:hover {
+                      cursor: pointer;
+                    }
+                  }
                 }
               }
             }
@@ -387,12 +393,10 @@ main {
               margin: 8px;
               transition-delay: 2s;
               @include font('Inter', normal, 500, 20px, 24px, black);
-              &:hover {
-                opacity:0.6;
-              }
             }
             .active {
-              border-left: 4px solid $main-color
+              border-left: 4px solid $main-color;
+              background: linear-gradient(90deg, $background-color, white) ;
             }
           }
         }
@@ -412,7 +416,7 @@ main {
         }
         .buttons {
           @include positionning(flex, space-around, center);
-          padding-bottom: 25px;
+          padding-bottom: 35px;
           button {
             @include font('Inter', normal, 500, 20px, 24px, black);
             padding: 10px;
@@ -420,6 +424,7 @@ main {
             border-radius: 50px;
             background-color: white;
             white-space: nowrap;
+            box-shadow: 0 3px 10px #85888C;
             &:hover {
               cursor: pointer;
             }
@@ -431,7 +436,7 @@ main {
         }
         .articles {
           .header {
-            padding-bottom: 10px;
+            padding-bottom: 15px;
             @include positionning(flex, space-between, center);
             .subtitle {
               @include font('Inter', normal, 500, 24px, 29px, black);
@@ -445,7 +450,7 @@ main {
             }
           }
           article {
-            padding-bottom: 10px;
+            padding-bottom: 15px;
             h3 {
               @include font('Inter', normal, 500, 20px, 24px, black);
             }
@@ -483,7 +488,7 @@ main {
         background-color: $secondary-color;
         padding: 10px 0;
         @include positionning(flex, center, center);
-        gap: 15px;
+        gap: 25px;
         &:hover {
           cursor: pointer;  
         }

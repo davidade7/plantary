@@ -474,7 +474,8 @@ main .right-section .circle:hover {
     font-size: 40px;
     line-height: 48px;
     color: #58C835;
-    margin-left: 30px;
+    margin: auto;
+    padding-right: 53px;
   }
   body .mobile header #menu-toggle {
     position: absolute;
@@ -512,6 +513,15 @@ main .right-section .circle:hover {
   body .mobile header #menu-toggle input:checked ~ ul {
     -webkit-transform: none;
             transform: none;
+  }
+  body .mobile header #menu-toggle input:checked ~ ul li {
+    -webkit-user-select: all;
+       -moz-user-select: all;
+        -ms-user-select: all;
+            user-select: all;
+  }
+  body .mobile header #menu-toggle input:checked ~ ul li:hover {
+    cursor: pointer;
   }
   body .mobile header #menu-toggle span {
     display: -webkit-box;
@@ -573,11 +583,10 @@ main .right-section .circle:hover {
     line-height: 24px;
     color: black;
   }
-  body .mobile header #menu-toggle ul li:hover {
-    opacity: 0.6;
-  }
   body .mobile header #menu-toggle ul .active {
     border-left: 4px solid #58C835;
+    background: -webkit-gradient(linear, left top, right top, from(#D1FFC6), to(white));
+    background: linear-gradient(90deg, #D1FFC6, white);
   }
   body .mobile .content {
     padding: 10px;
@@ -612,7 +621,7 @@ main .right-section .circle:hover {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding-bottom: 25px;
+    padding-bottom: 35px;
   }
   body .mobile .content .buttons button {
     font-family: "Inter";
@@ -626,6 +635,8 @@ main .right-section .circle:hover {
     border-radius: 50px;
     background-color: white;
     white-space: nowrap;
+    -webkit-box-shadow: 0 3px 10px #85888C;
+            box-shadow: 0 3px 10px #85888C;
   }
   body .mobile .content .buttons button:hover {
     cursor: pointer;
@@ -635,7 +646,7 @@ main .right-section .circle:hover {
     color: white;
   }
   body .mobile .content .articles .header {
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -668,7 +679,7 @@ main .right-section .circle:hover {
     cursor: pointer;
   }
   body .mobile .content .articles article {
-    padding-bottom: 10px;
+    padding-bottom: 15px;
   }
   body .mobile .content .articles article h3 {
     font-family: "Inter";
@@ -736,7 +747,7 @@ main .right-section .circle:hover {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    gap: 15px;
+    gap: 25px;
   }
   body .mobile footer:hover {
     cursor: pointer;
